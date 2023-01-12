@@ -48,6 +48,7 @@ public class DogServiceImpl implements DogService {
 
     @Override
     public Optional<Dog> getDogById(Long id) {
+        Dog dog = dogRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Dog not found with id " + id));
         return dogRepository.findById(id);
     }
 
