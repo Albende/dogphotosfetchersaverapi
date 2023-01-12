@@ -24,14 +24,14 @@ public class DogController {
         return dogServiceImpl.getDogById(id);
     }
 
-    @GetMapping(value = "/savedog")
-    public ResponseEntity<List<Dog>> saveAllDogs() {
-        return dogServiceImpl.saveDogData();
+    @GetMapping(value = "/{dogtype}/savedogs/{count}")
+    public ResponseEntity<List<Dog>> saveAllDogs(@PathVariable("dogtype") String dogtype, @PathVariable("count") Long count) {
+        return dogServiceImpl.saveDogData(dogtype,count);
     }
 
-    @GetMapping(value = "/onedog")
-    public ResponseEntity<Dog> getOneDog() {
-        return dogServiceImpl.saveOneDogData();
+    @GetMapping(value = "/{dogtype}/saveonedog")
+    public ResponseEntity<Dog> getOneDog(@PathVariable("dogtype") String dogtype) {
+        return dogServiceImpl.saveOneDogData(dogtype);
     }
 
     @PutMapping(value = "/dogs/{id}")

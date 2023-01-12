@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DogService {
-    public ResponseEntity<List<Dog>> saveDogData();
+    public ResponseEntity<List<Dog>> saveDogData(String dogtype, Long count);
 
     public List<Dog> getAllDogs();
 
     public Optional<Dog> getDogById(Long id);
 
-    public ResponseEntity<Dog> saveOneDogData();
+    public ResponseEntity<Dog> saveOneDogData(String dogtype);
 
 
 

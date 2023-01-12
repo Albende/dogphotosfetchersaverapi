@@ -21,21 +21,21 @@ public class DogServiceImpl implements DogService {
     private FeignClient dogClient;
 
     @Override
-    public ResponseEntity<List<Dog>> saveDogData() {
-        List<String> dogDataMessage = dogClient.getDogData().getMessage();
+    public ResponseEntity<List<Dog>> saveDogData(String dogtype, Long count) {
+        List<String> dogDataMessage = dogClient.getDogData(dogtype, count).getMessage();
         List<Dog> dogs = new ArrayList<>();
         for (String message : dogDataMessage) {
             Dog dog = new Dog();
             dog.setMessage(message);
-            dog.setStatus(dogClient.getDogData().getStatus());
+            dog.setStatus(dogClient.getDogData(dogtype, count).getStatus());
             dogs.add(dogRepository.save(dog));
         }
         return new ResponseEntity<>(dogs, HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<Dog> saveOneDogData() {
-        Dog dog = dogClient.oneDogData();
+    public ResponseEntity<Dog> saveOneDogData(String dogtype) {
+        Dog dog = dogClient.oneDogData(dogtype);
 
         dogRepository.save(dog);
         return new ResponseEntity<>(dog, HttpStatus.OK);
