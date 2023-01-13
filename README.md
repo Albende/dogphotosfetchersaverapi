@@ -54,7 +54,7 @@ use GET request with `localhost:8080/{dogtype}/savedogs/{count}`. You can declar
 `saveOneDog()`; you can use `GET` request `localhost:8080/{dogtype}/saveonedog` to fetch one dog from the following url: `https://dog.ceo/api/breed/hound/images/random` and save it into database. I have declared `dogtype` as hound(`localhost:8080/hound/saveonedog`). You can check the official documentation and can see what you can use as dogtype in the following link: `https://dog.ceo/dog-api/documentation`
 
 
-`updateDog()`; you can use `PUT` request `localhost:8080/update-dogs/{id}` to update the data in database. For example: Use postman and send `PUT` request with the following body {"message":"testing","status":"failed"} to the following API: PUT `localhost:8080/update-dogs/1`. If you have dog with id `1` in your database, it will change its message and status accordingly.
+`updateDog()`; you can use `PUT` request `localhost:8080/update-dog/{id}` to update the data in database. For example: Use postman and send `PUT` request with the following body {"message":"testing","status":"failed"} to the following API: PUT `localhost:8080/update-dogs/1`. If you have dog with id `1` in your database, it will change its message and status accordingly.
 
 
-`deleteDog()`; you can use `DELETE` request `localhost:8080/delete-dogs/{id}` and delete dog with id. For example: DELETE `localhost:8080/delete-dogs/1`. It will delete dog with id `1`.
+`deleteDog()`; you can use `DELETE` request `localhost:8080/delete-dog/{id}` and delete dog with id. For example: DELETE `localhost:8080/delete-dogs/1`. It will delete dog with id `1`.
