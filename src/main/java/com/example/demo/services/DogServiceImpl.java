@@ -63,9 +63,6 @@ public class DogServiceImpl implements DogService {
     @Override
     public ResponseEntity<Dog> updateDog(Long id, Dog dog) {
         Dog currentDog = dogRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Dog not found with id " + id));
-//        if(!dog.getMessage().isEmpty()){
-//
-//        }
         currentDog.setMessage(dog.getMessage());
         currentDog.setStatus(dog.getStatus());
         return new ResponseEntity<>(dogRepository.save(currentDog), HttpStatus.OK);
