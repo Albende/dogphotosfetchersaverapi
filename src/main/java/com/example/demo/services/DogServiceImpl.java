@@ -42,6 +42,13 @@ public class DogServiceImpl implements DogService {
     }
 
     @Override
+    public void deleteDog(Long id) {
+        Dog dog = dogRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Dog not found with id " + id));
+        dogRepository.deleteById(id);
+
+    }
+
+    @Override
     public List<Dog> getAllDogs() {
         return dogRepository.findAll();
     }

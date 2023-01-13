@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Dog;
 import com.example.demo.services.DogServiceImpl;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,19 +26,24 @@ public class DogController {
     }
 
     @GetMapping(value = "/{dogtype}/savedogs/{count}")
-    public ResponseEntity<List<Dog>> saveAllDogs(@PathVariable("dogtype") String dogtype, @PathVariable("count") Long count) {
-        return dogServiceImpl.saveDogData(dogtype,count);
+    public ResponseEntity<List<Dog>> saveDogs(@PathVariable("dogtype") String dogtype, @PathVariable("count") Long count) {
+        return dogServiceImpl.saveDogData(dogtype, count);
     }
 
     @GetMapping(value = "/{dogtype}/saveonedog")
-    public ResponseEntity<Dog> getOneDog(@PathVariable("dogtype") String dogtype) {
+    public ResponseEntity<Dog> saveOneDog(@PathVariable("dogtype") String dogtype) {
         return dogServiceImpl.saveOneDogData(dogtype);
     }
 
-    @PutMapping(value = "/dogs/{id}")
+    @PutMapping(value = "/update-dogs/{id}")
     public ResponseEntity<Dog> updateDog(@PathVariable("id") Long id, @RequestBody Dog dog) {
         return dogServiceImpl.updateDog(id, dog);
     }
 
+    @DeleteMapping(value = "/delete-dogs/{id}")
+    public ResponseEntity<String> deleteDog(@PathVariable("id") Long id) {
+        dogServiceImpl.deleteDog(id);
+        return new ResponseEntity<>("Dog deleted successfully", HttpStatus.OK);
+    }
 
 }

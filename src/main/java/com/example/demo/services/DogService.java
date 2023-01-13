@@ -15,7 +15,7 @@ public interface DogService {
 
     public ResponseEntity<Dog> saveOneDogData(String dogtype);
 
-
+    public void deleteDog(Long id);
 
 
     ResponseEntity<Dog> updateDog(Long id, Dog dog);
