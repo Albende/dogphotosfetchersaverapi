@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
+@CrossOrigin(exposedHeaders = "Access-Control-Allow-Origin")
 public class DogController {
     private DogServiceImpl dogServiceImpl;
 
