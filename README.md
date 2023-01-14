@@ -3,6 +3,12 @@ Spring Boot REST API app with Lombok, Spring Web, Spring Security, JPA, PostgreS
 
 EXPLANATION and How to use:
 
+
+
+First of all, when you will run the application in your IDE, Spring Security will automatically generate password for security. You can see that generated password in logs. Use `user` as username for login and your `generated password` for password. You have to use the password and username to be able to send requests. 
+
+
+
 I am going to explain all in detail because I had all these issues and I have tried to search and find a solution by my own side.
 All programmers can have these kinds of issues. That's why I am explaining everything in depth.
 
