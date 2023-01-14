@@ -1,7 +1,13 @@
 # dogphotosfetchersaverapi
-Spring Boot REST API app with Lombok, Spring Web, JPA, PostgreSQL, OpenFeign. This app will fetch data from external API and save it into database.
+Spring Boot REST API app with Lombok, Spring Web, Spring Security, JPA, PostgreSQL, OpenFeign, CORS. This app will fetch data from external API and save it into database.
 
 EXPLANATION and How to use:
+
+
+
+First of all, when you will run the application, Spring Security will automatically generate password for security. You can see that generated password in logs. Use `user` as username and your `generated password` for password. You have to use the password and username to be able to send requests. 
+
+
 
 I am going to explain all in detail because I had all these issues and I have tried to search and find a solution by my own side.
 All programmers can have these kinds of issues. That's why I am explaining everything in depth.
