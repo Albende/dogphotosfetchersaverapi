@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,8 +19,10 @@ public class Dog {
     @Column(name = "id")
     Long id;
     @Column(name = "message")
+    @NotNull
     String message;
     @Column(name = "status")
+    @NotNull
     String status;
 
 }
