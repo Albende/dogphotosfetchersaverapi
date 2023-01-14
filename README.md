@@ -5,7 +5,7 @@ EXPLANATION and How to use:
 
 
 
-First of all, when you will run the application in your IDE, Spring Security will automatically generate password for security. You can see that generated password in logs. Use `user` as username for login and your `generated password` for password. You have to use the password and username to be able to send requests. 
+First of all, when you will run the application, Spring Security will automatically generate password for security. You can see that generated password in logs. Use `user` as username and your `generated password` for password. You have to use the password and username to be able to send requests. 
 
 
 
