@@ -1,5 +1,5 @@
 # dogphotosfetchersaverapi
-Spring Boot REST API app with Lombok, Spring Web, Spring Security, JPA, PostgreSQL, OpenFeign, CORS. This app will fetch data from external API and save it into database.
+Spring Boot REST API app with Lombok, Spring Web, Spring Security, Validation, JPA, PostgreSQL, OpenFeign, CORS. This app will fetch data from external API and save it into database.
 
 EXPLANATION and How to use:
 
